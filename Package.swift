@@ -9,8 +9,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "StoryTools",
-            targets: ["StoryTools"]
+            name: "StoryToolsSP",
+            targets: ["StoryToolsSP"]
         ),
     ],
     targets: [
@@ -19,7 +19,7 @@ let package = Package(
         .binaryTarget(name: "StoryToolsBinary", url: "https://github.com/YinZhenJob/StoryToolsSP/releases/download/untagged-c0d78d3ab0941ab7bd4c/StoryTools.xcframework.zip", checksum: "a11850741a8d51c41056f4f130bf6d2294d3d0976421c53af1e6ec9c1ab4edc6"),
         .target(
             name: "StoryToolsSP",
-            dependencies: [.byNameItem(name: "StoryToolsBinary", condition: .none)],
+            dependencies: ["StoryToolsBinary"],
             path: "Sources/StoryToolsSP",
             resources: []
         )
