@@ -8,8 +8,8 @@ let package = Package(
     platforms: [.visionOS(.v26)],
     products: [
         .library(
-            name: "StoryToolsSP",
-            targets: ["StoryToolsSP"]
+            name: "StoryTools",
+            targets: ["StoryTools"]
         ),
     ],
     targets: [
@@ -17,6 +17,6 @@ let package = Package(
             name: "StoryToolsSP",
             path: "Sources",
         ),
-        .binaryTarget(name: "StoryToolsBinary", url: "https://github.com/YinZhenJob/StoryToolsSP/releases/download/v1.0.0/StoryTools.xcframework.zip", checksum: "a11850741a8d51c41056f4f130bf6d2294d3d0976421c53af1e6ec9c1ab4edc6")
+        .binaryTarget(name: "StoryTools", url: "https://github.com/YinZhenJob/StoryToolsSP/releases/download/v1.0.0/StoryTools.xcframework.zip", checksum: "a11850741a8d51c41056f4f130bf6d2294d3d0976421c53af1e6ec9c1ab4edc6")
     ]
 )
