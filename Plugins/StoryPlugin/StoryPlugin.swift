@@ -11,11 +11,14 @@ import Foundation
 @main
 struct StoryPlugin: BuildToolPlugin {
     func createBuildCommands(context: PluginContext, target: Target) async throws -> [Command] {
+        print("Start unzip story")
         // 查找目标中的 zip 文件
         let sourceFiles = target.sourceModule?.sourceFiles
         guard let zipFile = sourceFiles?.first(where: { $0.url.pathExtension == "zip" }) else {
+            print("Zip file is none")
             throw StoryPluginError.noZipFileFound
         }
+        print("Zip file: \(zipFile.url.lastPathComponent) in path \(zipFile.url.path(percentEncoded: false))")
         
         // 确定输出目录
         let outputDir = context.pluginWorkDirectoryURL.appending(component: "StoriesOutput")
