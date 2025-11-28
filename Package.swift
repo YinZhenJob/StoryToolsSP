@@ -16,6 +16,7 @@ let package = Package(
         .target(
             name: "StoryToolsSP",
             path: "Sources",
+            plugins: [.plugin(name: "StoryPlugin")]
         ),
         .binaryTarget(name: "StoryTools", url: "https://github.com/YinZhenJob/StoryToolsSP/releases/download/v1.0.0/StoryTools.xcframework.zip", checksum: "a11850741a8d51c41056f4f130bf6d2294d3d0976421c53af1e6ec9c1ab4edc6"),
         .plugin(name: "StoryPlugin", capability: .buildTool(), path: "Plugins/StoryPlugin")
